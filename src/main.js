@@ -3,6 +3,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
+
 import {
   Menu, Submenu, MenuItem, Input, Container,
   Header,
@@ -34,6 +37,8 @@ Vue.use(Table);
 Vue.use(TableColumn);
 Vue.use(Avatar);
 Vue.use(Card);
+
+Vue.use(mavonEditor)
 
 new Vue({
   router,

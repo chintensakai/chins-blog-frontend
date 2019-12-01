@@ -1,5 +1,5 @@
 <template>
-  <el-container>
+  <el-container class="el-main">
     <el-header>
       <slot name="el-header"></slot>
     </el-header>
@@ -10,7 +10,7 @@
         <router-view></router-view>
       </el-main>
       <div class="aside">
-        <el-aside width="360px">
+        <el-aside width="320px">
           <slot name="el-aside"></slot>
         </el-aside>
       </div>
@@ -39,5 +39,6 @@ export default {
 
 .el-main {
   text-align: center;
+  height: 100%;
 }
 </style>
