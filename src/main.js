@@ -17,7 +17,9 @@ import {
   Table,
   TableColumn,
   Avatar,
-  Card
+  Card,
+  Checkbox,
+  CheckboxGroup,
 } from 'element-ui';
 
 Vue.config.productionTip = false
@@ -37,6 +39,8 @@ Vue.use(Table);
 Vue.use(TableColumn);
 Vue.use(Avatar);
 Vue.use(Card);
+Vue.use(Checkbox);
+Vue.use(CheckboxGroup);
 
 Vue.use(mavonEditor)
 
