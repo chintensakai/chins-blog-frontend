@@ -5,9 +5,8 @@
 </template>
 
 <script>
-import axios from "axios";
 import ArticleList from "@/components/common/ArticleList.vue";
-
+import {getAllArticles} from '@/network/mainpage.js'
 
 export default {
   name: "MainPage",
@@ -16,23 +15,13 @@ export default {
   },
   data() {
     return {
-      articleList: [
-          {
-              title: 'sdfdsfsdfsdfds',
-              text: 'sdfdsfdsfdsfd'
-          },
-      ],
-      helllll: 'dfdsfdsfdsdsdsfd'
-    };
+      articleList: []
+    }
   },
   created() {
-    axios({
-      method: "get",
-      url: "http://localhost:8082/haha"
-    }).then(res => {
-      console.log(res);
-      this.articlelist = res;
-    });
+    getAllArticles().then(res => {
+      this.articleList = res.data.list;
+    })
   }
 };
 </script>

@@ -15,8 +15,6 @@ export default {
   name: "NavBar",
   methods: {
       handleSelect(index, indexPath) {
-          console.log('--------index ' + index);
-          console.log('--------indexPath ' + indexPath);
           this.$router.replace(index);
       }
   }

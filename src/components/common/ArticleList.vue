@@ -4,8 +4,9 @@
       <div v-for="(article, index) in articleList" :key="index" class="text item">
         <h2>{{article.title}}</h2>
         <div>{{article.date}}</div>
-        <p>{{article.text}}</p>
-        <div>阅读 {{article.views}} 评论 {{article.comments}} 赞 {{article.thumbsUp}}</div>
+        <p>{{article.content}}</p>
+        <div>阅读 {{article.views}} 评论 {{article.comments}} 赞 {{article.thumbs}}</div>
+      <div class="border-bottom"></div>
       </div>
     </el-card>
   </div>
@@ -17,9 +18,6 @@ export default {
   props: {
     articleList: {
       type: Array
-    },
-    helllll: {
-      type: String
     }
   }
 };
@@ -29,6 +27,11 @@ export default {
 .text {
   font-size: 14px;
   text-align: left;
+}
+
+.border-bottom {
+  margin-top: 20px;
+  border-bottom: 1px solid #dddddd;
 }
 
 .item {
