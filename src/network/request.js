@@ -4,7 +4,10 @@ export function request(config) {
     // 1. 创建axios实例
     const instance = axios.create({
         baseURL: 'http://localhost:8082',
-        timeout: 5000
+        timeout: 5000,
+        headers: {
+            'content-type': 'application/json'
+        }
     })
 
     // 2. axios拦截器

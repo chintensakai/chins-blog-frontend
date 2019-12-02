@@ -2,12 +2,12 @@
   <div id="mavon-editor">
     <el-input v-model="title" placeholder="请输入文章标题" class="title"></el-input>
     <mavon-editor v-model="content" />
-    <el-checkbox-group v-model="checkList" class="tags">
+    <el-checkbox-group v-model="checkList" class="tags" size="small ">
       <el-checkbox border label="Java"></el-checkbox>
       <el-checkbox border label="Spring Boot"></el-checkbox>
       <el-checkbox border label="JavaScript"></el-checkbox>
-      <el-checkbox border label="Linux"></el-checkbox>
       <el-checkbox border label="Vue"></el-checkbox>
+      <el-checkbox border label="Linux"></el-checkbox>
     </el-checkbox-group>
     <div class="button-group">
       <el-button round>取消</el-button>
@@ -31,9 +31,15 @@ export default {
   methods: {
     newArticle() {
       postArticle({
-        title: title,
-        content: content,
-        category: checkList
+        data: {
+          article: {
+            title: this.title,
+            content: this.content
+          },
+          categorys: this.checkList
+        }
+      }).then(res => {
+        console.log(res);
       });
     }
   }

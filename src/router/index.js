@@ -1,13 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import MainPage from '@/views/MainPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/home',
     name: 'MainLayout',
-    component: () => import('@/views/MainPage.vue')
+    // component: () => import('@/views/MainPage.vue')
+    component: MainPage
   },
   {
     path: '/category',
