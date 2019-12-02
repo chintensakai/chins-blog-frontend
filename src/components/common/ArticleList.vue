@@ -2,7 +2,7 @@
   <div>
     <el-card class="box-card">
       <div v-for="(article, index) in articleList" :key="index" class="text item">
-        <h2>{{article.title}}</h2>
+        <h2 class="title" @click="goArticleDetails(article.id)">{{article.title}}</h2>
         <div>{{article.date}}</div>
         <p>{{article.content}}</p>
         <div>
@@ -25,6 +25,11 @@ export default {
   props: {
     articleList: {
       type: Array
+    }
+  },
+  methods: {
+    goArticleDetails(id) {
+      this.$router.replace('/article/' + id);
     }
   }
 };
@@ -52,5 +57,9 @@ export default {
 .views-info {
   padding: 0 20px 0px 5px;
 
+}
+
+.title:hover {
+  color: #409EFF
 }
 </style>

@@ -5,8 +5,7 @@
     </el-header>
     <el-container>
       <el-main>
-        <!-- <slot name="el-main"> -->
-        <!-- </slot> -->
+        <!-- <slot name="el-main"></slot> -->
         <router-view></router-view>
       </el-main>
       <div class="aside">

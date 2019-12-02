@@ -7,3 +7,9 @@ export function postArticle(data) {
         data: data
     })
 }
+
+export function getArticleDetail(id) {
+    return request({
+        url: '/article/' + id
+    })
+}

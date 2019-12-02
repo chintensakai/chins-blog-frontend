@@ -13,6 +13,11 @@ const routes = [
     component: MainPage
   },
   {
+    path: '/article/:id',
+    name: 'ArticleDetails',
+    component: () => import('@/views/ArticleDetails.vue')
+  },
+  {
     path: '/category',
     name: 'Category',
     component: () => import('@/views/Category.vue')
