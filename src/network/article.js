@@ -1,12 +1,11 @@
 import { request } from './request';
 
-export function postArticle(content) {
+export function postArticle(article) {
     return request({
         method: 'post',
         url: '/postarticle',
         data: {
-            content: content,
-            date: ''
+            article: article
         }
     })
 }

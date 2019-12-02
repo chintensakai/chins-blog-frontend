@@ -5,8 +5,15 @@
         <h2>{{article.title}}</h2>
         <div>{{article.date}}</div>
         <p>{{article.content}}</p>
-        <div>阅读 {{article.views}} 评论 {{article.comments}} 赞 {{article.thumbs}}</div>
-      <div class="border-bottom"></div>
+        <div>
+          <i class="el-icon-s-custom"></i>
+          <span class="views-info">{{article.views}}</span>
+          <i class="el-icon-s-comment"></i>
+          <span class="views-info">{{article.comments}}</span>
+          <i class="el-icon-star-on"></i>
+          <span class="views-info">{{article.thumbs}}</span>
+        </div>
+        <div class="border-bottom"></div>
       </div>
     </el-card>
   </div>
@@ -40,5 +47,10 @@ export default {
 
 .box-card {
   width: 760px;
+}
+
+.views-info {
+  padding: 0 20px 0px 5px;
+
 }
 </style>

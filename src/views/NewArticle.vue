@@ -1,5 +1,6 @@
 <template>
   <div id="mavon-editor">
+    <el-input v-model="title" placeholder="请输入文章标题" class="title"></el-input>
     <mavon-editor v-model="content" />
     <el-checkbox-group v-model="checkList" class="tags">
       <el-checkbox border label="Java"></el-checkbox>
@@ -10,7 +11,7 @@
     </el-checkbox-group>
     <div class="button-group">
       <el-button round>取消</el-button>
-      <el-button type="primary" round @click="postArticle">发布</el-button>
+      <el-button type="primary" round @click="newArticle">发布</el-button>
     </div>
   </div>
 </template>
@@ -22,13 +23,18 @@ export default {
   name: "NewArticle",
   data() {
     return {
-      content: "dsfdsfdsfdsdsf",
+      title: '',
+      content: '',
       checkList: []
     };
   },
   methods: {
-    postArticle() {
-      postArticle(this.content);
+    newArticle() {
+      postArticle({
+        title: title,
+        content: content,
+        category: checkList
+      });
     }
   }
 };
@@ -41,5 +47,9 @@ export default {
 
 .tags {
   margin-top: 20px;
+}
+
+.title {
+  margin-bottom: 10px;
 }
 </style>
