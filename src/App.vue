@@ -26,5 +26,6 @@ export default {
   #app {
     width: 1200px;
     margin: 0 auto;
+    /* background-color: #f4f4f4; */
   }
 </style>

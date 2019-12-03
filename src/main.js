@@ -20,6 +20,8 @@ import {
   Card,
   Checkbox,
   CheckboxGroup,
+  collapse,
+  CollapseItem
 } from 'element-ui';
 
 Vue.config.productionTip = false
@@ -41,6 +43,8 @@ Vue.use(Avatar);
 Vue.use(Card);
 Vue.use(Checkbox);
 Vue.use(CheckboxGroup);
+Vue.use(collapse);
+Vue.use(CollapseItem);
 
 Vue.use(mavonEditor)
 

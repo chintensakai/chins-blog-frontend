@@ -1,14 +1,15 @@
 <template>
-  <mavon-editor
-    v-model="articleDetail.article.content"
-    :subfield="false"
-    :toolbarsFlag="false"
-    :editable="false"
-    scrollStyle="true"
-    :ishljs="true"
-    :defaultOpen="'preview'"
-  />
-  <!-- <div v-html="compiledMarkdown">{{articleDetail.article.content}}</div> -->
+  <div>
+    <mavon-editor
+      v-model="articleDetail.article.content"
+      :subfield="false"
+      :toolbarsFlag="false"
+      :editable="false"
+      scrollStyle="true"
+      :ishljs="true"
+      :defaultOpen="'preview'"
+    />
+  </div>
 </template>
 
 <script>
@@ -34,12 +35,7 @@ export default {
   },
   computed: {
     compiledMarkdown() {
-      return marked(this.articleDetail.article.content, {
-        highlight: function(code) {
-          //新加的，用来配置语法高亮
-          return hljs.highlightAuto(code).value;
-        }
-      });
+      return this.articleDetail.article.content;
     }
   },
   created() {
@@ -50,3 +46,6 @@ export default {
   }
 };
 </script>
+
+<style>
+</style>
