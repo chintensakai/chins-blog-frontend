@@ -1,9 +1,21 @@
 <template>
-  <div>{{articleDetail}}</div>
+  <mavon-editor
+    v-model="articleDetail.article.content"
+    :subfield="false"
+    :toolbarsFlag="false"
+    :editable="false"
+    scrollStyle="true"
+    :ishljs="true"
+    :defaultOpen="'preview'"
+  />
+  <!-- <div v-html="compiledMarkdown">{{articleDetail.article.content}}</div> -->
 </template>
 
 <script>
 import { getArticleDetail } from "@/network/article.js";
+import marked from "marked";
+import hljs from "highlight.js";
+import "highlight.js/styles/github.css";
 
 export default {
   name: "ArticleDetails",
@@ -22,6 +34,16 @@ export default {
         }
       }
     };
+  },
+  computed: {
+    compiledMarkdown() {
+      return marked(this.articleDetail.article.content, {
+        highlight: function(code) {
+          //新加的，用来配置语法高亮
+          return hljs.highlightAuto(code).value;
+        }
+      });
+    }
   },
   created() {
     getArticleDetail(this.$route.params.id).then(res => {

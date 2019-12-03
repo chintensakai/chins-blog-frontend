@@ -39,6 +39,7 @@ export default {
           categorys: this.checkList
         }
       }).then(res => {
+        this.$router.replace('/home');
         console.log(res);
       });
     }
