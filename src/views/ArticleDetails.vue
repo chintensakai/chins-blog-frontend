@@ -13,9 +13,6 @@
 
 <script>
 import { getArticleDetail } from "@/network/article.js";
-import marked from "marked";
-import hljs from "highlight.js";
-import "highlight.js/styles/github.css";
 
 export default {
   name: "ArticleDetails",
