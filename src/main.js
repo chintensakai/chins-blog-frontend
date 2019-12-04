@@ -21,7 +21,9 @@ import {
   Checkbox,
   CheckboxGroup,
   collapse,
-  CollapseItem
+  CollapseItem,
+  Timeline,
+  TimelineItem,
 } from 'element-ui';
 
 Vue.config.productionTip = false
@@ -45,6 +47,8 @@ Vue.use(Checkbox);
 Vue.use(CheckboxGroup);
 Vue.use(collapse);
 Vue.use(CollapseItem);
+Vue.use(Timeline);
+Vue.use(TimelineItem);
 
 Vue.use(mavonEditor)
 

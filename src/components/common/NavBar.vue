@@ -5,7 +5,7 @@
       <el-menu-item index="/home">文章</el-menu-item>
       <el-menu-item index="/new">新建</el-menu-item>
       <el-menu-item index="/category">分类</el-menu-item>
-      <el-menu-item index="4">归档</el-menu-item>
+      <el-menu-item index="/archive">归档</el-menu-item>
       <el-menu-item index="/me">关于</el-menu-item>
     </el-menu>
   </div>
