@@ -13,3 +13,9 @@ export function getArticleDetail(id) {
         url: '/article/' + id
     })
 }
+
+export function getArchiveArticle(year) {
+    return request({
+        url: '/archive/' + year
+    })
+}

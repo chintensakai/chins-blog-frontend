@@ -25,6 +25,4 @@ export default {
 </script>
 
 <style scoped>
-.header-bar {
-}
 </style>
