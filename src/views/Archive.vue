@@ -3,27 +3,36 @@
     <el-collapse>
       <el-collapse-item>
         <template slot="title">
-          <div class="title" @click="queryYearlyCount(getCurrentYear)">{{getCurrentYear}}年</div>
+          <div
+            class="title"
+            @click="queryYearlyCount(getCurrentYear)"
+          >{{getCurrentYear}}年 -- 共 {{archiveCountList[0].count}} 篇</div>
         </template>
-        <article-archive-card :articleList="articleList"></article-archive-card>
+        <article-archive-card :articleList="articleLis_current"></article-archive-card>
       </el-collapse-item>
       <el-collapse-item>
         <template slot="title">
-          <div @click="queryYearlyCount(getCurrentYear - 1)">{{getCurrentYear - 1}}年</div>
+          <div
+            @click="queryYearlyCount(getCurrentYear - 1)"
+          >{{getCurrentYear - 1}}年 -- 共 {{archiveCountList[1].count}} 篇</div>
         </template>
-        <article-archive-card :articleList="articleList"></article-archive-card>
+        <article-archive-card :articleList="articleLis_last"></article-archive-card>
       </el-collapse-item>
       <el-collapse-item>
         <template slot="title">
-          <div @click="queryYearlyCount(getCurrentYear - 2)">{{getCurrentYear - 2}}年</div>
+          <div
+            @click="queryYearlyCount(getCurrentYear - 2)"
+          >{{getCurrentYear - 2}}年 -- 共 {{archiveCountList[2].count}} 篇</div>
         </template>
-        <article-archive-card :articleList="articleList"></article-archive-card>
+        <article-archive-card :articleList="articleLis_before_last"></article-archive-card>
       </el-collapse-item>
       <el-collapse-item>
         <template slot="title">
-          <div @click="queryYearlyCount(getCurrentYear - 3)">{{getCurrentYear -3}}年</div>
+          <div
+            @click="queryYearlyCount(getCurrentYear - 3)"
+          >{{getCurrentYear -3}}年 -- 共 {{archiveCountList[3].count}} 篇</div>
         </template>
-        <article-archive-card :articleList="articleList"></article-archive-card>
+        <article-archive-card :articleList="articleLis_three_year_ago"></article-archive-card>
       </el-collapse-item>
     </el-collapse>
   </div>
@@ -32,6 +41,7 @@
 <script>
 import ArticleArchiveCard from "@/components/layout/ArticleArchiveCard.vue";
 import { getArchiveArticle } from "@/network/article.js";
+import { getYearlyArchiveCount } from "@/network/article.js";
 
 export default {
   name: "Archive",
@@ -40,20 +50,36 @@ export default {
   },
   data() {
     return {
-      articleList: []
+      articleLis_current: [],
+      articleLis_last: [],
+      articleLis_before_last: [],
+      articleLis_three_year_ago: [],
+      archiveCountList: []
     };
   },
   methods: {
     queryYearlyCount(year) {
-      this.articleList = [];
       getArchiveArticle(year).then(res => {
-        this.articleList = res.data;
+        switch (year) {
+          case getCurrentYear() - 1:
+            this.articleLis_last = res.data;
+            break;
+          case getCurrentYear() - 2:
+            this.articleLis_before_last = res.data;
+            break;
+          case getCurrentYear() - 3:
+            this.articleLis_three_year_ago = res.data;
+            break;
+          default:
+            this.articleLis_current = res.data;
+            break;
+        }
       });
     }
   },
   created() {
-    getArchiveArticle(new Date().getFullYear()).then(res => {
-      this.articleList = res.data;
+    getYearlyArchiveCount().then(res => {
+      this.archiveCountList = res.data;
     });
   },
   computed: {
@@ -65,6 +91,10 @@ export default {
     }
   }
 };
+
+function getCurrentYear() {
+  return new Date().getFullYear();
+}
 </script>
 
 <style scoped>

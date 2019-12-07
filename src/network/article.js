@@ -19,3 +19,9 @@ export function getArchiveArticle(year) {
         url: '/archive/' + year
     })
 }
+
+export function getYearlyArchiveCount() {
+    return request({
+        url: '/archive'
+    })
+}
