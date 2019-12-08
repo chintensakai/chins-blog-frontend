@@ -9,8 +9,9 @@
         <router-view></router-view>
       </el-main>
       <div class="aside">
-        <el-aside width="320px">
-          <slot name="el-aside"></slot>
+        <el-aside width="360px">
+          <about-me class="contact-me"></about-me>
+          <top-views></top-views>
         </el-aside>
       </div>
     </el-container>
@@ -18,8 +19,14 @@
 </template>
 
 <script>
+import TopViews from '@/views/TopViews.vue'
+import AboutMe from '@/views/AboutMe.vue'
 export default {
-  name: "GlobalLayout"
+  name: "GlobalLayout",
+  components: {
+    TopViews,
+    AboutMe
+  }
 };
 </script>
 
@@ -39,5 +46,9 @@ export default {
 .el-main {
   text-align: center;
   height: 100%;
+}
+
+.contact-me {
+  margin-bottom: 20px;
 }
 </style>

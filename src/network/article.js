@@ -33,3 +33,9 @@ export function increArticleViews(data) {
         data: data
     })
 }
+
+export function getTopViewsArticle() {
+    return request({
+        url: '/topviews',
+    })
+}

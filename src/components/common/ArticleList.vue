@@ -1,7 +1,8 @@
 <template>
+  <!-- <el-card class="box-card" shadow="hover"> -->
   <div>
-    <el-card class="box-card">
-      <div v-for="(article, index) in articleList" :key="index" class="text item">
+    <div v-for="(article, index) in articleList" :key="index" class="text item">
+      <el-card class="box-card" shadow="hover">
         <h2 class="title" @click="goArticleDetails(article.id)">{{article.title}}</h2>
         <div>{{article.date}}</div>
         <p>{{article.content}}</p>
@@ -13,10 +14,10 @@
           <i class="el-icon-star-on"></i>
           <span class="views-info">{{article.thumbs}}</span>
         </div>
-        <div class="border-bottom"></div>
-      </div>
-    </el-card>
+      </el-card>
+    </div>
   </div>
+  <!-- </el-card> -->
 </template>
 
 <script>
@@ -54,18 +55,20 @@ export default {
 }
 
 .item {
-  padding: 18px 0;
+  padding: 8px 0;
 }
 
 .box-card {
   width: 760px;
+  color: #606266;
 }
 
 .views-info {
   padding: 0 20px 0px 5px;
 }
 
-.title:hover {
+.title {
   color: #409eff;
 }
+
 </style>
