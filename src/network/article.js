@@ -25,3 +25,11 @@ export function getYearlyArchiveCount() {
         url: '/archive'
     })
 }
+
+export function increArticleViews(data) {
+    return request({
+        url: '/article/increviews',
+        method: 'post',
+        data: data
+    })
+}

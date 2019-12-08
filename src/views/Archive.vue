@@ -54,7 +54,8 @@ export default {
       articleLis_last: [],
       articleLis_before_last: [],
       articleLis_three_year_ago: [],
-      archiveCountList: []
+      archiveCountList: [],
+      count: 0
     };
   },
   methods: {

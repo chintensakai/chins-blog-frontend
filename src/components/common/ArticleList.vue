@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import { increArticleViews } from "@/network/article.js";
+
 export default {
   name: "ArticleList",
   props: {
@@ -29,7 +31,12 @@ export default {
   },
   methods: {
     goArticleDetails(id) {
-      this.$router.replace('/article/' + id);
+      increArticleViews({
+        data: {
+          id: id
+        }
+      }).then(res => {});
+      this.$router.replace("/article/" + id);
     }
   }
 };
@@ -56,10 +63,9 @@ export default {
 
 .views-info {
   padding: 0 20px 0px 5px;
-
 }
 
 .title:hover {
-  color: #409EFF
+  color: #409eff;
 }
 </style>
