@@ -39,3 +39,12 @@ export function getTopViewsArticle() {
         url: '/article/topviews',
     })
 }
+
+export function searchArticle(title) {
+    return request({
+        url: '/article/search',
+        params: {
+            title: title
+        }
+    })
+}

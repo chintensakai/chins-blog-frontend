@@ -24,7 +24,8 @@ import {
   CollapseItem,
   Timeline,
   TimelineItem,
-  Dialog
+  Dialog,
+  Autocomplete
 } from 'element-ui';
 
 Vue.config.productionTip = false
@@ -51,6 +52,7 @@ Vue.use(CollapseItem);
 Vue.use(Timeline);
 Vue.use(TimelineItem);
 Vue.use(Dialog);
+Vue.use(Autocomplete);
 
 Vue.use(mavonEditor)
 
