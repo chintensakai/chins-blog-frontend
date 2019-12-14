@@ -16,6 +16,8 @@
           placeholder="请输入内容"
           size="small"
           suffix-icon="el-icon-search"
+          :trigger-on-focus=false
+          :highlight-first-item=true
         ></el-autocomplete>
       </el-menu-item>
     </el-menu>
