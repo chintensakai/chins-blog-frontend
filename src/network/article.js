@@ -3,7 +3,7 @@ import { request } from './request';
 export function postArticle(data) {
     return request({
         method: 'post',
-        url: '/postarticle',
+        url: '/article/postarticle',
         data: data
     })
 }
@@ -16,13 +16,13 @@ export function getArticleDetail(id) {
 
 export function getArchiveArticle(year) {
     return request({
-        url: '/archive/' + year
+        url: '/article/archive/' + year
     })
 }
 
 export function getYearlyArchiveCount() {
     return request({
-        url: '/archive'
+        url: '/article/archive'
     })
 }
 
@@ -36,6 +36,6 @@ export function increArticleViews(data) {
 
 export function getTopViewsArticle() {
     return request({
-        url: '/topviews',
+        url: '/article/topviews',
     })
 }
