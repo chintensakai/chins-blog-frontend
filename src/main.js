@@ -25,7 +25,10 @@ import {
   Timeline,
   TimelineItem,
   Dialog,
-  Autocomplete
+  Autocomplete,
+  Select,
+  Form,
+  FormItem
 } from 'element-ui';
 
 Vue.config.productionTip = false
@@ -53,8 +56,11 @@ Vue.use(Timeline);
 Vue.use(TimelineItem);
 Vue.use(Dialog);
 Vue.use(Autocomplete);
+Vue.use(Select);
+Vue.use(Form);
+Vue.use(FormItem);
 
-Vue.use(mavonEditor)
+Vue.use(mavonEditor);
 
 new Vue({
   router,
