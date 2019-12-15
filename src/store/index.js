@@ -11,6 +11,9 @@ export default new Vuex.Store({
   mutations: {
     changeLoginState(state, loginState) {
       state.isLogin = loginState;
+    },
+    saveToken(token) {
+      state.token = token;
     }
   },
   actions: {

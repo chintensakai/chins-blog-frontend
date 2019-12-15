@@ -23,7 +23,7 @@
 
 <script>
 import { mapMutations } from "vuex";
-import { Message } from 'element-ui';
+import { Message } from "element-ui";
 import { login } from "@/network/user.js";
 
 export default {
@@ -47,7 +47,7 @@ export default {
           this.dialogFormVisible = false;
           this.changeLoginState(true);
         } else {
-          Message("登录失败")
+          Message("登录失败");
         }
       });
     },
