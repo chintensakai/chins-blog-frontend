@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import MainPage from '@/views/MainPage.vue'
+import { Message } from 'element-ui';
+import store from '../store'
 
 Vue.use(VueRouter)
 
@@ -25,7 +27,19 @@ const routes = [
   {
     path: '/new',
     name: 'NewArticle',
-    component: () => import('@/views/NewArticle.vue')
+    component: () => import('@/views/NewArticle.vue'),
+    beforeEnter: (to, from, next) => {
+
+      const isLogin = store.state.isLogin;
+
+      if (true === isLogin) {
+
+        next();
+      } else {
+        Message("请先登录");
+      }
+
+    }
   },
   {
     path: '/me',
