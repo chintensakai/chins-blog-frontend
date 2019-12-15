@@ -13,7 +13,7 @@ import HeaderBar from "@/components/layout/HeaderBar.vue";
 import MainPage from "@/views/MainPage.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     GlobalLayout,
     HeaderBar,
@@ -23,9 +23,9 @@ export default {
 </script>
 
 <style>
-  #app {
-    width: 1200px;
-    margin: 0 auto;
-    /* background-color: #f4f4f4; */
-  }
+#app {
+  width: 1200px;
+  margin: 0 auto;
+  /* background-color: #f4f4f4; */
+}
 </style>

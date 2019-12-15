@@ -5,7 +5,12 @@
         <nav-bar></nav-bar>
       </el-col>
       <el-col :span="8">
-        <guest-box></guest-box>
+        <div v-if="isLogin">
+          <user-info-box></user-info-box>
+        </div>
+        <div v-else>
+          <guest-box></guest-box>
+        </div>
       </el-col>
     </el-row>
   </div>
@@ -14,12 +19,19 @@
 <script>
 import NavBar from "@/components/common/NavBar.vue";
 import GuestBox from "@/components/common/GuestBox.vue";
+import UserInfoBox from "@/components/common/UserInfoBox.vue";
+
+import { mapState } from "vuex";
 
 export default {
   name: "Header",
   components: {
     NavBar,
-    GuestBox
+    GuestBox,
+    UserInfoBox
+  },
+  computed: {
+    ...mapState(["isLogin"])
   }
 };
 </script>

@@ -3,7 +3,7 @@
     <el-row class="sss">
       <el-button type="text" @click="dialogFormVisible = true">登录</el-button>
       <el-button type="text">注册</el-button>
-      <el-dialog title="登录" :visible.sync="dialogFormVisible" width="36%">
+      <el-dialog title="登录" :visible.sync="dialogFormVisible" width="30%">
         <el-form :model="form">
           <el-form-item>
             <el-input v-model="form.name" autocomplete="off" placeholder="请输入用户名"></el-input>
@@ -22,7 +22,10 @@
 </template>
 
 <script>
+import { mapMutations } from "vuex";
+
 import { login } from "@/network/user.js";
+
 export default {
   name: "GuestBox",
   data() {
@@ -40,9 +43,11 @@ export default {
         username: this.form.name,
         password: this.form.pwd
       }).then(res => {
-        this.dialogFormVisible = false
+        this.dialogFormVisible = false;
+        this.changeLoginState(true);
       });
-    }
+    },
+    ...mapMutations(["changeLoginState"])
   }
 };
 </script>
