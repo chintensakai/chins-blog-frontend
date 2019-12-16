@@ -28,7 +28,8 @@ import {
   Autocomplete,
   Select,
   Form,
-  FormItem
+  FormItem,
+  Pagination
 } from 'element-ui';
 
 Vue.config.productionTip = false
@@ -59,6 +60,7 @@ Vue.use(Autocomplete);
 Vue.use(Select);
 Vue.use(Form);
 Vue.use(FormItem);
+Vue.use(Pagination);
 
 Vue.use(mavonEditor);
 

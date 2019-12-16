@@ -5,3 +5,11 @@ export function getAllArticles() {
         url: '/article/all'
     })
 }
+
+export function getArticlesPage(page) {
+    return request({
+        url: '/article/page',
+        data: page,
+        method: 'post'
+    })
+}
